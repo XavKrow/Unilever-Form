@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Postulación | Unilever</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --azul-corp: #001e50; }
+        body { background-color: #f8f9fa; }
+        .bg-custom { background-color: var(--azul-corp); }
+        .card { border-radius: 20px; border: none; }
+        .form-section-title { 
+            color: var(--azul-corp); 
+            border-bottom: 2px solid #e9ecef; 
+            padding-bottom: 10px; 
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+        .btn-send { background-color: var(--azul-corp); color: white; padding: 15px; font-weight: bold; transition: 0.3s; }
+        .btn-send:hover { background-color: #003399; color: white; transform: translateY(-2px); }
+        
+        #mensaje-exito { display: none; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar bg-custom mb-4 shadow">
+        <div class="container justify-content-center">
+            <a class="navbar-brand" href="index.html">
+                <img src="/img/unilev_logo.png" alt="TechCorp" style="height: 40px;">
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="card shadow-lg p-4 p-md-5">
+                    
+                    <div id="mensaje-exito" class="alert alert-success text-center border-0 shadow-sm p-4 mb-4" role="alert">
+                        <h4 class="alert-heading fw-bold">¡Solicitud Enviada!</h4>
+                        <p>Gracias por tu interés en TechCorp. Hemos recibido tus datos correctamente y nuestro equipo de RRHH los revisará pronto.</p>
+                        <hr>
+                        <a href="index.html" class="btn btn-outline-success btn-sm">Volver al Inicio</a>
+                    </div>
+
+                    <div id="contenedor-formulario">
+                        <h2 class="text-center mb-5 fw-bold" style="color: var(--azul-corp);">Solicitud de Candidatura</h2>
+
+                        <form id="miFormulario" action="https://formspree.io/f/mkoqjlpd" method="POST">
+                            
+                            <h5 class="form-section-title">1. Información Personal</h5>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-8 border-end">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" name="Nombre" class="form-control" id="fNombre" placeholder="Nombre" required>
+                                        <label for="fNombre">Nombre Completo</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" name="Domicilio" class="form-control" id="fDom" placeholder="Domicilio" required>
+                                        <label for="fDom">Domicilio Completo</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input type="text" name="Contacto" class="form-control" id="fCont" placeholder="Teléfono/Email" required>
+                                        <label for="fCont">Datos de Contacto (Teléfono o Email)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="number" name="Edad" class="form-control" id="fEdad" placeholder="Edad" required>
+                                        <label for="fEdad">Edad</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <select name="Ubicacion_Residencia" class="form-select" id="fVive">
+                                            <option value="Cerca">Vivo Cerca</option>
+                                            <option value="Lejos">Vivo Lejos</option>
+                                        </select>
+                                        <label for="fVive">¿Vives cerca o lejos?</label>
+                                    </div>
+                                    <div class="form-check mt-3">
+                                        <input class="form-check-input" type="checkbox" name="Cambio_Residencia" id="checkRes">
+                                        <label class="form-check-label small" for="checkRes">¿Cambiarías tu residencia?</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h5 class="form-section-title">2. Perfil Profesional</h5>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Perfil educativo:</label>
+                                <textarea name="Educacion" class="form-control" rows="2" required></textarea>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">Tus habilidades:</label>
+                                    <textarea name="Habilidades" class="form-control" rows="3"></textarea>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">Idiomas:</label>
+                                    <textarea name="Idiomas" class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <h5 class="form-section-title">3. Visión y Desarrollo</h5>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small">¿Cuáles son tus expectativas y qué nos ofreces?</label>
+                                <textarea name="Expectativas_Y_Oferta" class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small">¿Cómo te visualizas en 5 años y cómo te comunicas en equipo?</label>
+                                <textarea name="Vision_Y_Comunicacion" class="form-control" rows="3"></textarea>
+                            </div>
+
+                            <h5 class="form-section-title">4. Preferencias</h5>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6 text-start">
+                                    <label class="form-label fw-bold small">Preferencia de puestos:</label>
+                                    <input type="text" name="Puestos_Preferencia" class="form-control">
+                                </div>
+                                <div class="col-md-6 text-start">
+                                    <label class="form-label fw-bold small">¿Cómo te enteraste de la oferta?</label>
+                                    <input type="text" name="Origen_Oferta" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-bold small">¿Cambiarías de trabajo por otras propuestas? ¿Por qué?</label>
+                                <textarea name="Fidelidad_Cambio" class="form-control" rows="2"></textarea>
+                            </div>
+
+                            <div class="d-grid mt-5">
+                                <button type="submit" id="botonEnviar" class="btn btn-send shadow">ENVIAR SOLICITUD</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <a href="index.html" class="text-muted small text-decoration-none">Volver al portal de empleo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById("miFormulario");
+        const btn = document.getElementById("botonEnviar");
+        const exitoMsg = document.getElementById("mensaje-exito");
+        const formContenedor = document.getElementById("contenedor-formulario");
+
+        async function handleSubmit(event) {
+          event.preventDefault(); 
+          btn.innerText = "Enviando...";
+          btn.disabled = true;
+
+          const data = new FormData(event.target);
+          
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              formContenedor.style.display = "none";
+              exitoMsg.style.display = "block";
+              window.scrollTo(0, 0);
+            } else {
+              response.json().then(data => {
+                alert("Error: " + data.errors.map(error => error.message).join(", "));
+                btn.innerText = "Reintentar";
+                btn.disabled = false;
+              })
+            }
+          }).catch(error => {
+            alert("Hubo un problema de conexión. Inténtalo de nuevo.");
+            btn.innerText = "Reintentar";
+            btn.disabled = false;
+          });
+        }
+
+        form.addEventListener("submit", handleSubmit)
+    </script>
+
+</body>
+</html>
